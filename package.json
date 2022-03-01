@@ -1,0 +1,46 @@
+{
+  "name": "mytranslate-api",
+  "version": "4.1.1",
+  "description": "Test translation",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava --reporter=text-lcov",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "release": "npm test && npm version $VER && npm publish",
+    "postrelease": "git push --follow-tags --no-verify",
+    "release-patch": "VER=patch npm run release",
+    "release-minor": "VER=minor npm run release"
+  },
+  "keywords": [
+    "translate",
+    "translator",
+    "google",
+    "translate",
+    "api",
+    "free",
+    "language"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RitaBot-Project/google-translate-api/issues"
+  },
+  "homepage": "https://github.com/RitaBot-Project/google-translate-api#readme",
+  "dependencies": {
+    "configstore": "^5.0.1",
+    "got": "^11.8.3",
+	"puppeteer":"^13.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "ava": "^4.0.1",
+    "babel-eslint": "^10.1.0",
+    "codecov": "^3.8.3",
+    "coveralls": "^2.13.3",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.4",
+    "nyc": "^15.1.0"
+  }
+}
